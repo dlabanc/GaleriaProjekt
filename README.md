@@ -1,0 +1,2 @@
+# GaleriaProjekt
+Labanc Dániel
