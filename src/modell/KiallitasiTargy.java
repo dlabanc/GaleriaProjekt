@@ -28,10 +28,12 @@ public abstract class KiallitasiTargy implements Comparable<KiallitasiTargy>{
         datumEll();
     }
     
-    public void datumEll() throws Exception {
+    public String datumEll() throws Exception {
+        String hiba = "";
         if(letrehozasiDatum.after(new Date())){
-            System.out.println("Hibás dátum!");
+           hiba = "hibás dátum!";
         }
+        return hiba;
     }
     
     

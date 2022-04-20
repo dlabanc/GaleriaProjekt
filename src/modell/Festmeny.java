@@ -13,9 +13,17 @@ public class Festmeny extends KiallitasiTargy{
 
     private String eleresiUt;
 
+    public Festmeny(String keszito, String cim) throws Exception {
+        super(keszito, cim);
+    }
+
     public Festmeny(String keszito, String cim, String eleresiUt) throws Exception {
         super(keszito, cim);
         this.eleresiUt = eleresiUt;
+    }
+    
+    public Festmeny(Date letrehozasiDatum, String keszito, String cim) throws Exception {
+        super(letrehozasiDatum, keszito, cim);
     }
 
     public Festmeny(Date letrehozasiDatum, String keszito, String cim, String eleresiUt) throws Exception {

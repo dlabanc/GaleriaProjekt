@@ -6,14 +6,19 @@
 
 package main;
 
+import modell.Galeria;
+import modell.KiallitasiTargy;
+
 /**
  *
  * @author Labanc.Daniel
  */
 public class Program {
  
-    
-    //Készítő és cím
-    //Készító és cím mai dátummal
-    //Készítő és cím hibás dátummal
+    public static void main(String[] args) throws Exception {
+        
+        Galeria g = new Galeria();
+       
+        
+    }
 }
