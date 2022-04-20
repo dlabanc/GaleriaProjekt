@@ -6,10 +6,11 @@
 
 package modell;
 
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Date;
 
-public abstract class KiallitasiTargy implements Comparable<KiallitasiTargy>{
+public abstract class KiallitasiTargy implements Comparable<KiallitasiTargy>, Serializable{
 
     private Date letrehozasiDatum;
     String keszito, cim;

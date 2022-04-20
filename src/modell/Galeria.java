@@ -5,12 +5,19 @@
  */
 package modell;
 
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.Iterator;
 
-public class Galeria implements Iterable<KiallitasiTargy> {
+public class Galeria implements Iterable<KiallitasiTargy>, Serializable {
     
     private ArrayList<KiallitasiTargy> targyak;
     SimpleDateFormat format;
@@ -41,6 +48,33 @@ public class Galeria implements Iterable<KiallitasiTargy> {
     @Override
     public String toString() {
         return "Galeria{" + "targyak=" + targyak + ", format=" + format + ", dateString=" + dateString + '}';
+    }
+    
+    public void kiir() throws IOException {
+        try (ObjectOutputStream objKi = new ObjectOutputStream(new FileOutputStream("galeria.bin"))) {
+            objKi.writeObject(this);
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        }
+    }
+
+    public static Galeria beolvas(String fajlNev) throws Exception {
+        Galeria g1 = new Galeria();
+        try (ObjectInputStream objBe = new ObjectInputStream(new FileInputStream(fajlNev))) {
+            g1 = (Galeria) objBe.readObject();
+
+            return g1;
+        } catch (FileNotFoundException ex) {
+            ex.printStackTrace();
+        } catch (IOException ex) {
+            ex.printStackTrace();
+        } catch (ClassNotFoundException ex) {
+            ex.printStackTrace();
+        }
+
+        return g1;
     }
     
     

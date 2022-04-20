@@ -6,6 +6,7 @@
 
 package main;
 
+import modell.Festmeny;
 import modell.Galeria;
 import modell.KiallitasiTargy;
 
@@ -18,6 +19,11 @@ public class Program {
     public static void main(String[] args) throws Exception {
         
         Galeria g = new Galeria();
+        
+        g.felvesz(new Festmeny("Attila", "Képek"));
+        
+        g.kiir();
+        g.beolvas("galeria.bin");
        
         
     }

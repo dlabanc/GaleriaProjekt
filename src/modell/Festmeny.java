@@ -6,10 +6,11 @@
 package modell;
 
 import java.io.File;
+import java.io.Serializable;
 import java.util.Comparator;
 import java.util.Date;
 
-public class Festmeny extends KiallitasiTargy{
+public class Festmeny extends KiallitasiTargy implements Serializable{
 
     private String eleresiUt;
 
